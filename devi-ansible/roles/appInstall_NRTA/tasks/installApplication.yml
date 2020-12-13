@@ -1,0 +1,21 @@
+#- name: "Download springboot application"
+#  get_url:
+#    url: "{{ springboot_src_url }}"
+#    dest: "{{ springboot_deploy_folder }}/{{ springboot_application_name }}.jar"
+#    owner: "{{ springboot_user }}"
+#    group: "{{ springboot_group }}"
+#    mode: "u+x"
+#  when: springboot_src_url is defined and springboot_src_url|length > 0
+#  notify:
+#    - "Restart application"
+
+- name: " copt jar files to destination"
+  copy:
+    src: "{{ springboot_application_name }}.war"
+    dest: "{{ springboot_deploy_folder }}/{{ springboot_application_name }}.war"
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+    mode: "u+x"
+  notify:
+     - "Restart application"
+

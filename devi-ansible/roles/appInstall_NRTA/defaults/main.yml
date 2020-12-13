@@ -1,0 +1,7 @@
+---
+# defaults file for appInstall_NRTA
+springboot_src_url: "http://artifatory1.com/web"
+springboot_deploy_folder: /opt/tomcat/webapps/
+springboot_application_name: helloworld
+springboot_user: tomcat
+springboot_group: tomcat

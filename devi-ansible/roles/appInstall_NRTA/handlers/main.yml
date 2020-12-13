@@ -1,0 +1,8 @@
+---
+# handlers file for appInstall_NRTA
+- name: "Restart application"
+  systemd:
+    name: tomcat 
+    state: restarted
+    enabled: true
+    daemon_reload: true
